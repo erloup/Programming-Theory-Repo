@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class Enemy : TurretController
 {
     public GameObject explosion;
@@ -51,7 +52,7 @@ public class Enemy : TurretController
             gameManager.NbEnemies--;
         }
     }
-
+    // ABSTRACTION
     protected virtual void FocusPlayer()
     {
         Vector3 lookTurret = playerTank.transform.position - turret.transform.position;
@@ -64,6 +65,7 @@ public class Enemy : TurretController
         UpDownGun(focusRotationGun);
     }
 
+    // POLYMORPHISM
     public override void Shoot()
     {
         if (isDestroy) return;

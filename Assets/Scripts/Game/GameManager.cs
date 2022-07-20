@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
     private float time;
     private bool isOver = false;
+    // ENCAPSULATION
     public int NbEnemies
     {
         get => nbEnemies;
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
         MainManager.Instance.timesList.Add(new MainManager.PlayerTime() { name = MainManager.Instance.name, time = time });
         SceneManager.LoadScene(2);
     }
-
+    // ABSTRACTION
     private void UpdateATH()
     {
         zoomText.text = "x" + Math.Round(player.Zoom, 1);

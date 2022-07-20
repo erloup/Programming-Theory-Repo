@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class MouvingEnemy : Enemy
 {
     public Vector3 position1;
@@ -20,7 +21,6 @@ public class MouvingEnemy : Enemy
         diffDisparition = 0;
         base.FocusPlayer();
         Invoke("Shoot", Random.Range(shootIntervaMin, shootIntervaMax));
-        //Invoke("Shoot", Random.Range(shootIntervaMin, shootIntervaMax));
     }
 
     // Update is called once per frame
@@ -42,6 +42,7 @@ public class MouvingEnemy : Enemy
         }
     }
 
+    // POLYMORPHISM
     protected override void FocusPlayer()
     {
         Vector3 lookTurret = playerTank.transform.position - turret.transform.position;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretController : MonoBehaviour
+public abstract class TurretController : MonoBehaviour
 {
     public GameObject turret;
     [SerializeField] protected float turretSpeed = 20;
@@ -15,12 +15,12 @@ public class TurretController : MonoBehaviour
     public GameObject bulletPrefab;
     [SerializeField] protected float bulletForce = 2000;
 
-
+    // POLYMORPHISM
     public void RotationTurret(float angle)
     {
         turret.transform.Rotate(Vector3.up, angle);
     }
-
+    // POLYMORPHISM
     public void RotationTurret(Quaternion angle)
     {
         turret.transform.rotation = angle;
@@ -30,7 +30,7 @@ public class TurretController : MonoBehaviour
     {
         turret.transform.rotation = Quaternion.RotateTowards(turret.transform.rotation, angle, turretSpeed * Time.deltaTime);
     }
-
+    // POLYMORPHISM
     public void UpDownGun(float angle)
     {
         gun.transform.Rotate(Vector3.left, angle);
@@ -46,7 +46,7 @@ public class TurretController : MonoBehaviour
             gun.transform.localRotation = adjust;
         }
     }
-
+    // POLYMORPHISM
     public void UpDownGun(Quaternion angle)
     {
         gun.transform.rotation = angle;

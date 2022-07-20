@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class PlayerController : TurretController
 {
     private float defaultFow = 60;
@@ -15,9 +16,13 @@ public class PlayerController : TurretController
     private float cooldown = 2;
     private bool isCooldown;
     private float actualCooldown;
+    // ENCAPSULATION
     public float Cooldown { get => cooldown; }
+    // ENCAPSULATION
     public bool IsCooldown { get => isCooldown; }
+    // ENCAPSULATION
     public float ActualCooldown { get => actualCooldown; }
+    // ENCAPSULATION
     public float Health
     {
         get => health;
@@ -53,17 +58,19 @@ public class PlayerController : TurretController
         if(!isCooldown) CommandFire();
         CommandZoom();
     }
-
+    // ABSTRACTION
     private void CommandTurret()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         this.RotationTurret(horizontalInput * turretSpeed * Time.deltaTime);
     }
+    // ABSTRACTION
     private void CommandGun()
     {
         float verticalInput = Input.GetAxis("Vertical");
         this.UpDownGun(verticalInput * gunSpeed * Time.deltaTime);
     }
+    // ABSTRACTION
     private void CommandFire()
     {
         if (Input.GetMouseButtonDown(0))
@@ -72,6 +79,7 @@ public class PlayerController : TurretController
             isCooldown = true;
         }
     }
+    // ABSTRACTION
     private void CommandZoom()
     {
         float scrollData = Input.GetAxis("Mouse ScrollWheel");
