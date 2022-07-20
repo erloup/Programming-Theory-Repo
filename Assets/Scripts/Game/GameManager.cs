@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,12 +35,15 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isOver = true;
-        Debug.Log("game over");
+        MainManager.Instance.isGameOver = true;
+        SceneManager.LoadScene(2);
     }
 
     public void Victory()
     {
-        Debug.Log("victory");
+        isOver = true;
+        MainManager.Instance.timesList.Add(new MainManager.PlayerTime() { name = MainManager.Instance.name, time = time });
+        SceneManager.LoadScene(2);
     }
 
     private void UpdateATH()

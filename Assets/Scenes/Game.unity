@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 2.507834, g: 1.0345272, b: 0.22521359, a: 1}
+  m_IndirectSpecularColor: {r: 2.4935448, g: 1.0253638, b: 0.21946567, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1466,7 +1466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tr_goToFollow: {fileID: 1976827081}
-  offsetXZ: -0.05
+  offsetXZ: 0
   offsetY: 0.2
 --- !u!1 &1075964700 stripped
 GameObject:
